@@ -7,6 +7,10 @@ CSS TABLE OF CONTENTS
     # GLOBAL RESET
     # GLOBAL COLORS
     # GLOBAL TYPOGRAPHY
+    # GLOBAL MEDIA (eg Images)
+
+# LAYOUT
+    # MEDIA QUERIES
 
 
 
@@ -30,6 +34,7 @@ CSS TABLE OF CONTENTS
     --font-body: Helvetica, Arial, sans-serif;
     --font-headings: Georgia, serif;
 }
+
 
 
 /* GLOBAL RESET */
@@ -68,6 +73,7 @@ a {
         color: var(--color-links-hover);
     }
 }
+
 
 
 /* GLOBAL TYPOGRAPHY */
@@ -117,4 +123,14 @@ p {
 
     /* NEW SCHOOL WIDOW SLAYER */
     text-wrap: pretty;
+}
+
+
+
+/* GLOBAL MEDIA */
+
+img {
+    /* MAKE ALL IMAGES SHRINK ON SMALL SCREENS */
+    max-width: 100%;
+    height: auto;
 }
