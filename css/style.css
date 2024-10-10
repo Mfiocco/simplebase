@@ -30,8 +30,11 @@ CSS TABLE OF CONTENTS
 
 # UI COMPONENTS
     # BUTTONS
-    # CARDS
 
+# ANIMATION
+    # SMOOTH SCROLLING
+
+# CUSTOM STYLING
 
 --------------------------------
 --------------------------------
@@ -49,13 +52,13 @@ CSS TABLE OF CONTENTS
 
     /* DEFINE ALL COMMONLY USED COLORS HERE */
 
-    /* --color-body-background: rgb(255 255 255);
+    --color-body-background: rgb(255 255 255);
     --color-text-body: rgb(0 0 0 / .8);
     --color-text-headings: rgb(0 0 0 / 1);
-    */
-    --color-body-background: rgb(0, 0, 0);
+   
+    /* --color-body-background: rgb(0, 0, 0);
     --color-text-body: rgba(255, 255, 255, 0.8);
-    --color-text-headings: rgb(255, 255, 255);
+    --color-text-headings: rgb(255, 255, 255); */
 
     --color-links-dark: rgba(102 102 102);
     --color-links-darker: rgb(0 0 0);
@@ -138,34 +141,29 @@ body {
 
 h1, h2, h3 {
 
-    /* SET THE FONT FOR ALL HEADINGS */
+    /* SET THE FONT AND MARGIN FOR ALL HEADINGS */
     font-family: var(--font-headings);
+    margin: .4em 0;
 
 }
 
 h1 {
-    /* SET H1 FONT SIZE */
+    /* SET H1 FONT SIZE AND LEADING*/
     font-size: 3em;
-
-    /* SET H1 LEADING */
     line-height: 1.1;
 }
 
 
 h2 {
-    /* SET H2 FONT SIZE */
+    /* SET H2 FONT SIZE AND LEADING*/
     font-size: 2em;
-
-    /* SET H2 LEADING */
     line-height: 1.2;
 }
 
 
 h3 {
-    /* SET H3 FONT SIZE */
+    /* SET H3 FONT SIZE AND LEADING */
     font-size: 1.5em;
-
-    /* SET H3 LEADING */
     line-height: 1.3;
 }
 
@@ -357,6 +355,10 @@ body {
         align-items: center;
         justify-content: center;
         gap: 1em;
+       
+        /* PLACE LOGO ON TOP OF TOGGLE MENU */
+        /* position: relative; */
+        z-index: 100;
 
         /* REMOVE MARGINS AND RESIZE H1 INSIDE HEADER AND FOOTER*/
         h1 {
@@ -442,6 +444,13 @@ body {
                     fill: var(--color-siteheader-links);
                 }
 
+                /* ADD SUPPORT FOR SVG ANIMATION */
+
+                svg > * {
+                    transition: all .2s ease-out;
+                    transform-origin: center;
+                }
+
         
             }
         }
@@ -484,6 +493,22 @@ body {
             /* SHOW THE SITE MENU WHEN OPEN */
             .site-menu {
                 transform: translateX(0);
+            }
+
+            /* ANIMATE THE NAV ICON / HAMBURGER TO AND X */
+            .site-menu-button svg {
+                
+                .simple-navicon-top {
+                    rotate: 45deg;
+                    translate: -21% 25%;
+                }
+                .simple-navicon-middle {
+                    opacity: 0;
+                }
+                .simple-navicon-bottom {
+                    rotate: -45deg;
+                    translate: -21% -25%;
+                }
             }
         
         }
@@ -543,6 +568,10 @@ section {
 .hero {
     background-color: var(--color-hero-background);
     color: var(--color-hero-text);
+
+    h1 {
+        font-size: 5em;
+    }
 
    
     h1, h2, h3 {
@@ -610,7 +639,7 @@ section {
         border-color: var(--color-links-darker);
     }
 
-    /* LIGHT BUTTON VARIANT */
+    /* ADD LIGHT BUTTON VARIANT */
     &.light {
         border-color: var(--color-links-light);
         background-color: var(--color-links-light);
@@ -623,4 +652,15 @@ section {
     }
 
 
+}
+
+
+/* ---------------- */
+/* -- ANIMATION --- */
+/* ---------------- */
+
+/* ADD SUPPORT FOR SMOOTH SCROLLING */
+
+html {
+    scroll-behavior: smooth;
 }
