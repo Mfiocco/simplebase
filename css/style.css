@@ -60,8 +60,10 @@ CSS TABLE OF CONTENTS
     --color-text-body: rgba(255, 255, 255, 0.8);
     --color-text-headings: rgb(255, 255, 255); */
 
+    --color-links: rgb(0, 132, 203);
+    --color-links-hover: rgb(0, 44, 133);
     --color-links-dark: rgba(102 102 102);
-    --color-links-darker: rgb(0 0 0);
+    --color-links-darker: rgb(0, 0, 0);
     --color-links-light: rgba(204 204 204);
     --color-links-lighter: rgba(255 255 255);
     
